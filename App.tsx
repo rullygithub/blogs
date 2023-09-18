@@ -13,19 +13,21 @@ import {
   View,
 } from 'react-native';
 import Homepage from './src/pages/homepage';
-import { BlogProvider } from './src/component/blogContext';
+import { Provider } from './src/component/blogContext';
+import ShowScreen from './src/pages/showScreen';
 
 const Stack = createNativeStackNavigator();
 
 function App() {
   return (
-    <BlogProvider>
+    <Provider>
       <NavigationContainer>
       <Stack.Navigator screenOptions={{headerShown: false}}>
         <Stack.Screen name='Homepage' component={Homepage}/>
+        <Stack.Screen name='Showscreen' component={ShowScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
-    </BlogProvider>
+    </Provider>
   )
 }
 
